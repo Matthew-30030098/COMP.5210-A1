@@ -26,7 +26,7 @@
             <br/>
             <h2><b>Object Class: </b>Euclid</h2>
             <br/>
-            <p><img class="imgs" src="images/800px-SCP002.jpg"></p>
+            <p><img class="imgs" alt="SCP-002" src="images/800px-SCP002.jpg" id="myImg"></p>
             <br/>
             <h3>Special Containment Procedures:</h3>
             <p>SCP-002 is to remain connected to a suitable power supply at all times, to keep it in what appears to be a recharging mode. In case of electrical outage, the emergency barrier between the object and the facility is to be closed and the immediate area evacuated. Once facility power is re-established, alternating bursts of X-ray and ultraviolet light must strobe the area until SCP-002 is re-affixed to the power supply and returned to recharging mode. Containment area is to be kept at negative air pressure at all times.</p>
@@ -46,5 +46,32 @@
             <p><code>[DATA EXPUNGED]</code></p>
             <p><code>Following the termination of General Mulhausen, SCP-002 was re-secured by SCP staff and brought into special containment in [CLASSIFIED], where it currently resides. Staff with clearance below Level 3 have been denied access to the SCP-002 container without prior approval of at least two Level 4 staff after the Mulhausen incident.</code></p>
         </div>
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+        </div>
+        <script>
+             // Get the modal
+            var modal = document.getElementById("myModal");
+
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            var img = document.getElementById("myImg");
+            var modalImg = document.getElementById("img01");
+            var captionText = document.getElementById("caption");
+            img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+            }
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() { 
+            modal.style.display = "none";
+            }
+        </script>
     </body>
 </html>
